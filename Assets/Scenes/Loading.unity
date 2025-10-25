@@ -538,6 +538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bpm: 120
+  beatInterval: 0.5
+  beatTimer: 0
 --- !u!1 &1082766738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,7 +1023,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!225 &1738202517
 CanvasGroup:

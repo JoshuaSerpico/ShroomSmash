@@ -9,8 +9,8 @@ public class BPMController : MonoBehaviour
 
     public static event Action OnBeat; // Global event
 
-    private double beatInterval;
-    private double beatTimer;
+    public double beatInterval;
+    public double beatTimer;
 
     void Awake()
     {
