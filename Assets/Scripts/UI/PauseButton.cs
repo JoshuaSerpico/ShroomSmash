@@ -32,4 +32,9 @@ public class PauseButton : MonoBehaviour
             pauseMenu.SetActive(false);
         }
     }
+
+    private void OnMouseDown()
+    {
+        onClick();
+    }
 }
