@@ -144,9 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed05085f318810d44a54c7827f1ded11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StayForNumBeats: 10
+  StayForNumBeats: 5
   Score: 100
   Bad: 0
+  skin: 0
+  leaving: 0
 --- !u!60 &8480773691890571710
 PolygonCollider2D:
   m_ObjectHideFlags: 0

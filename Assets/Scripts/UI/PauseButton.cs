@@ -20,17 +20,17 @@ public class PauseButton : MonoBehaviour
 
     public void onClick() 
     {
-        if (!GameManager.paused)
+        if (!GameManager.Paused)
         {
-            GameManager.paused = true;
             pauseMenu.SetActive(true);
             //implement pausing, not sure how to with the bpm settings
         }
-        else 
+        else
         {
-            GameManager.paused = false;
             pauseMenu.SetActive(false);
         }
+        
+        GameManager.Instance.TogglePause();
     }
 
     private void OnMouseDown()

@@ -4,24 +4,32 @@ public class HoleController : MonoBehaviour
 {
     [Header("Mushroom Settings")]
     [SerializeField] private GameObject[] mushroomPrefabs; // List of prefabs to pick from
+    [SerializeField] private int spawnDelayBeatsMin = 5; // Minimum beats to wait before spawning
+    [SerializeField] private int spawnDelayBeatsMax = 15; // Maximum beats to wait before spawning
 
     private bool mushroomExists = false;
     private int beatsUntilNextSpawn; // Number of beats to wait before spawning again
+
+    private bool Paused = false;
 
     void OnEnable()
     {
         Debug.Log($"HoleController enabled on {gameObject.name}");
         BPMController.OnBeat += OnBeat;
-        beatsUntilNextSpawn = Random.Range(30, 61); // Initial delay between 30 and 60 beats
+        GameManager.OnPauseChanged += HandlePauseChanged;
+        beatsUntilNextSpawn = Random.Range(10, 31); // Initial delay between 30 and 60 beats
     }
 
     void OnDisable()
     {
         BPMController.OnBeat -= OnBeat;
+        GameManager.OnPauseChanged -= HandlePauseChanged;
     }
 
     private void OnBeat()
     {
+        // if game is paused, do nothing
+        if (Paused) return;
         // If a mushroom exists, do nothing
         if (mushroomExists) return;
 
@@ -34,6 +42,11 @@ public class HoleController : MonoBehaviour
 
         Debug.Log($"Spawning mushroom at {gameObject.name}");
         SpawnMushroom();
+    }
+
+    private void HandlePauseChanged(bool paused)
+    {
+        Paused = paused;
     }
 
     private void SpawnMushroom()
@@ -79,6 +92,6 @@ public class HoleController : MonoBehaviour
         mushroomExists = false; // Allow the next spawn
 
         // Set a random delay between 10 and 30 beats (inclusive) before next spawn
-        beatsUntilNextSpawn = Random.Range(10, 31);
+        beatsUntilNextSpawn = Random.Range(spawnDelayBeatsMin, spawnDelayBeatsMax + 1);
     }
 }

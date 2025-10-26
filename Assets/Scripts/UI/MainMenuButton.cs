@@ -5,7 +5,7 @@ public class MainMenuButton : MonoBehaviour
 {
     public void onClick() 
     {
-        GameManager.paused = false;
+        GameManager.Instance.TogglePause();
         SceneManager.LoadScene("Main Menu");
     }
 }

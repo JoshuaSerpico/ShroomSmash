@@ -5,25 +5,65 @@ using UnityEngine;
 public class TimerUpdate : MonoBehaviour
 {
     public TMP_Text timerText;
+    private bool Paused = false;
+    private int lastDisplayedSeconds = -1; // avoid updating UI every frame
+
+    [Header("Countdown Settings")]
+    [Tooltip("Starting time in seconds for countdown")]
+    [SerializeField] private int Seconds = 300; // set in Inspector
+
+    private float remainingTime = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(startTimer());
+        remainingTime = Mathf.Max(0, Seconds + 1); // +1 to account for immediate countdown
+        UpdateTimerText();
     }
 
-    IEnumerator startTimer() 
+    void OnEnable()
     {
-        while (true)
+        GameManager.OnPauseChanged += HandlePauseChanged;
+    }
+
+    void OnDisable()
+    {
+        GameManager.OnPauseChanged -= HandlePauseChanged;
+    }
+
+    private void HandlePauseChanged(bool paused)
+    {
+        Paused = paused;
+    }
+
+    void Update()
+    {
+        if (Paused) return;
+
+        if (remainingTime <= 0f) return; // already finished
+
+        // Use unscaledDeltaTime to count real seconds irrespective of timeScale.
+        remainingTime -= Time.unscaledDeltaTime;
+        if (remainingTime < 0f) remainingTime = 0f;
+
+        int totalSeconds = Mathf.FloorToInt(remainingTime);
+        if (totalSeconds != lastDisplayedSeconds)
         {
-            float time = Time.time;
+            lastDisplayedSeconds = totalSeconds;
+            UpdateTimerText();
 
-            int minutes = Mathf.FloorToInt(time / 60f);
-            int seconds = Mathf.FloorToInt(time % 60f);
-
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-            yield return new WaitForSeconds(0.1f);
+            // Once timer reaches zero... DO SOMETHING
+            if (totalSeconds == 0)
+            {
+                Debug.LogWarning("Timer reached zero: Implement end-of-game logic here.");
+            }
         }
+    }
+
+    private void UpdateTimerText()
+    {
+        int minutes = Mathf.FloorToInt(remainingTime / 60f);
+        int seconds = Mathf.FloorToInt(remainingTime % 60f);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

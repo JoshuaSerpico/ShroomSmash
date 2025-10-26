@@ -1,7 +1,6 @@
 using UnityEngine;
 using System;
 using Spine.Unity;
-using System.Collections;
 
 public class MushroomController : MonoBehaviour
 {
@@ -9,19 +8,21 @@ public class MushroomController : MonoBehaviour
 
     [Header("Settings")]
     [Tooltip("# of Beats until Mushroom goes away")]
-    [SerializeField] private int StayForNumBeats = 10;
+    [SerializeField] private int StayForNumBeats = 5;
     [SerializeField] private int Score = 100;
     [SerializeField] private bool Bad = false;
     public int skin;
     [SerializeField] private bool leaving; // to not be able to click them as they leave, it causes funky animation stuff
-
     private int timer = 0;
     SkeletonAnimation skeletonAnimation;
+    private bool Paused = false;
+    public static event Action<bool> OnMistake; // Global event for mistakes
 
     void OnEnable()
     {
         skeletonAnimation = GetComponent<SkeletonAnimation>();
         BPMController.OnBeat += OnBeat;
+        GameManager.OnPauseChanged += HandlePauseChanged;
         timer = 0; // Reset timer when enabled
         leaving = false;
         // MUSHROOM APPEARS ANIMATION HERE
@@ -30,10 +31,15 @@ public class MushroomController : MonoBehaviour
     void OnDisable()
     {
         BPMController.OnBeat -= OnBeat;
+        GameManager.OnPauseChanged -= HandlePauseChanged;
     }
 
     private void OnBeat()
     {
+        // if game is paused, do nothing
+        if (Paused) return;
+
+        // Increment the timer each beat
         timer++;
 
         // Check if the mushroom should die
@@ -42,6 +48,11 @@ public class MushroomController : MonoBehaviour
             // MUSHROOM LEAVES ANIMATION HERE
             Die();
         }
+    }
+
+    private void HandlePauseChanged(bool paused)
+    {
+        Paused = paused;
     }
     
     private void OnMouseDown() // Called when the mushroom is clicked
@@ -59,6 +70,7 @@ public class MushroomController : MonoBehaviour
             if (Bad)
             {
                 skeletonAnimation.AnimationState.SetAnimation(0, "death-bad", false);
+                OnMistake?.Invoke(true); // Notify listeners of a mistake
             }
             else
             {
