@@ -130,7 +130,7 @@ MonoBehaviour:
   updateTiming: 1
   unscaledTime: 0
   _animationName: 
-  loop: 1
+  loop: 0
   timeScale: 1
 --- !u!114 &3080728427450192261
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed05085f318810d44a54c7827f1ded11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StayForNumBeats: 5
+  StayForNumBeats: 4
   Score: 100
   Bad: 0
   skin: 0

@@ -102,3 +102,5 @@ MonoBehaviour:
   - {fileID: 3644166255657201744, guid: 702869c97b3c52d4ebc0bd7691265e37, type: 3}
   - {fileID: 3644166255657201744, guid: 6e69e296bad76a64db99630872c4f3b8, type: 3}
   - {fileID: 3644166255657201744, guid: 23ce5e5da63a51e47a104f8d3e4187a2, type: 3}
+  spawnDelayBeatsMin: 3
+  spawnDelayBeatsMax: 12
