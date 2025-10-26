@@ -76,7 +76,6 @@ public class MushroomController : MonoBehaviour
             {
                 skeletonAnimation.AnimationState.SetAnimation(0, "death-good", false);
             }
-            skeletonAnimation.AnimationState.Complete += animationComplete;
             // DEATH ANIMATION HERE
 
             Die();
