@@ -26,6 +26,11 @@ public class ScoreHelper : MonoBehaviour
     {
         currentScore += amount;
 
+        if (currentScore < 0) 
+        {
+            currentScore = 0;
+        }
+
         // Update UI
         UpdateScoreUI();
 

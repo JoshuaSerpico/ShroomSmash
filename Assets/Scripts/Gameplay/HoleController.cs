@@ -53,10 +53,11 @@ public class HoleController : MonoBehaviour
         // Set mushroom animations and skins
         mushroomGO.transform.localScale = new Vector3(100f, 100f, 1);
         mushroomGO.transform.localPosition += new Vector3(-135f, -30, 0);
-        mushroomGO.GetComponent<MeshRenderer>().sortingOrder = 1;
+        mushroomGO.GetComponent<MeshRenderer>().sortingOrder = 21;
 
         var skeletonAnimation = mushroomGO.GetComponent<Spine.Unity.SkeletonAnimation>();
-        skeletonAnimation.initialSkinName = UnityEngine.Random.Range(1, 17).ToString();
+        var skin = UnityEngine.Random.Range(1, 17);
+        skeletonAnimation.initialSkinName = skin.ToString();
         skeletonAnimation.Initialize(true);
         skeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
 
@@ -68,6 +69,7 @@ public class HoleController : MonoBehaviour
         if (mushroom != null)
         {
             mushroom.OnDeath += HandleMushroomDeath;
+            mushroom.skin = skin;
         }
     }
 
