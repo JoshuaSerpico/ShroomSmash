@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ceeb73efddc94e142b7dd84b3be09fed
+guid: b6dbab850d1c02a46b61db4e2a835f85
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4080545822746010795
-    second: pause-apple_0
+      213: -8379643025390988449
+    second: pause-apple 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pause-apple_0
+      name: pause-apple 1_0
       rect:
         serializedVersion: 2
         x: 1
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba4ea7e5ec201a830800000000000000
-      internalID: 4080545822746010795
+      spriteID: f539dfec01785bb80800000000000000
+      internalID: -8379643025390988449
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pause-apple_0: 4080545822746010795
+      pause-apple 1_0: -8379643025390988449
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

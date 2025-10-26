@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f1f296bc72aa6df49988fdbdc3351b9d
+guid: 4f8e026e980ef4e449adf452224a831f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7492764017291475757
-    second: stump_1 1_0
+      213: -3358933203163112000
+    second: settings_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stump_1 1_0
+      name: settings_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 729
-        height: 528
+        width: 311
+        height: 260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d4438b13da540890800000000000000
-      internalID: -7492764017291475757
+      spriteID: 0cd92315c0ca261d0800000000000000
+      internalID: -3358933203163112000
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stump_1 1_0: -7492764017291475757
+      settings_0: -3358933203163112000
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

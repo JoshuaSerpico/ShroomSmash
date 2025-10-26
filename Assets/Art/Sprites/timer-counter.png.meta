@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 308d5d418038eb6498caa92195e08630
+guid: 58e4844e9c5a5894fa12787d1e684dd7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 906138596869739706
-    second: timer-counter_0
+      213: 8571382123942642248
+    second: timer-counter 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: timer-counter_0
+      name: timer-counter 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab411bfb040439c00800000000000000
-      internalID: 906138596869739706
+      spriteID: 8420cbbe0aaa3f670800000000000000
+      internalID: 8571382123942642248
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      timer-counter_0: 906138596869739706
+      timer-counter 1_0: 8571382123942642248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
