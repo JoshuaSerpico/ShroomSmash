@@ -50,6 +50,16 @@ public class HoleController : MonoBehaviour
         // Instantiate it as a child of this hole
         GameObject mushroomGO = Instantiate(prefab, transform.position, Quaternion.identity, transform);
 
+        // Set mushroom animations and skins
+        mushroomGO.transform.localScale = new Vector3(100f, 100f, 1);
+        mushroomGO.transform.localPosition += new Vector3(-135f, -30, 0);
+        mushroomGO.GetComponent<MeshRenderer>().sortingOrder = 1;
+
+        var skeletonAnimation = mushroomGO.GetComponent<Spine.Unity.SkeletonAnimation>();
+        skeletonAnimation.initialSkinName = UnityEngine.Random.Range(1, 17).ToString();
+        skeletonAnimation.Initialize(true);
+        skeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
+
         // Mark that a mushroom exists
         mushroomExists = true;
 

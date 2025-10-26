@@ -549,7 +549,7 @@ PrefabInstance:
     - target: {fileID: 8592480443397112004, guid: 62a5c39a35d10ac43bcc7701dc1c1b3c, type: 3}
       propertyPath: 'mushroomPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3644166255657201744, guid: f13e8cca63298bc4ca94261911c40a1b, type: 3}
+      objectReference: {fileID: 1293558171087923091, guid: 1a1d0c1f9c0543b45a77430203fbdb2e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -659,7 +659,7 @@ PrefabInstance:
     - target: {fileID: 8592480443397112004, guid: 62a5c39a35d10ac43bcc7701dc1c1b3c, type: 3}
       propertyPath: 'mushroomPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3644166255657201744, guid: f13e8cca63298bc4ca94261911c40a1b, type: 3}
+      objectReference: {fileID: 1293558171087923091, guid: 1a1d0c1f9c0543b45a77430203fbdb2e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2435,7 +2435,7 @@ PrefabInstance:
     - target: {fileID: 8592480443397112004, guid: 62a5c39a35d10ac43bcc7701dc1c1b3c, type: 3}
       propertyPath: 'mushroomPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3644166255657201744, guid: f13e8cca63298bc4ca94261911c40a1b, type: 3}
+      objectReference: {fileID: 1293558171087923091, guid: 1a1d0c1f9c0543b45a77430203fbdb2e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2545,7 +2545,7 @@ PrefabInstance:
     - target: {fileID: 8592480443397112004, guid: 62a5c39a35d10ac43bcc7701dc1c1b3c, type: 3}
       propertyPath: 'mushroomPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3644166255657201744, guid: f13e8cca63298bc4ca94261911c40a1b, type: 3}
+      objectReference: {fileID: 1293558171087923091, guid: 1a1d0c1f9c0543b45a77430203fbdb2e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2801,7 +2801,7 @@ PrefabInstance:
     - target: {fileID: 8592480443397112004, guid: 62a5c39a35d10ac43bcc7701dc1c1b3c, type: 3}
       propertyPath: 'mushroomPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3644166255657201744, guid: f13e8cca63298bc4ca94261911c40a1b, type: 3}
+      objectReference: {fileID: 1293558171087923091, guid: 1a1d0c1f9c0543b45a77430203fbdb2e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3880,7 +3880,7 @@ PrefabInstance:
     - target: {fileID: 8592480443397112004, guid: 62a5c39a35d10ac43bcc7701dc1c1b3c, type: 3}
       propertyPath: 'mushroomPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3644166255657201744, guid: f13e8cca63298bc4ca94261911c40a1b, type: 3}
+      objectReference: {fileID: 1293558171087923091, guid: 1a1d0c1f9c0543b45a77430203fbdb2e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4347,7 +4347,7 @@ PrefabInstance:
     - target: {fileID: 8592480443397112004, guid: 62a5c39a35d10ac43bcc7701dc1c1b3c, type: 3}
       propertyPath: 'mushroomPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3644166255657201744, guid: f13e8cca63298bc4ca94261911c40a1b, type: 3}
+      objectReference: {fileID: 1293558171087923091, guid: 1a1d0c1f9c0543b45a77430203fbdb2e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5199,7 +5199,7 @@ PrefabInstance:
     - target: {fileID: 8592480443397112004, guid: 62a5c39a35d10ac43bcc7701dc1c1b3c, type: 3}
       propertyPath: 'mushroomPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3644166255657201744, guid: f13e8cca63298bc4ca94261911c40a1b, type: 3}
+      objectReference: {fileID: 1293558171087923091, guid: 1a1d0c1f9c0543b45a77430203fbdb2e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
