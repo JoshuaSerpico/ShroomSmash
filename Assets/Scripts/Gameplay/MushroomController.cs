@@ -9,6 +9,7 @@ public class MushroomController : MonoBehaviour
     [Tooltip("# of Beats until Mushroom goes away")]
     [SerializeField] private int StayForNumBeats = 10;
     [SerializeField] private int Score = 100;
+    [SerializeField] private bool Bad = false;
 
     private int timer = 0;
 
@@ -16,6 +17,7 @@ public class MushroomController : MonoBehaviour
     {
         BPMController.OnBeat += OnBeat;
         timer = 0; // Reset timer when enabled
+        // MUSHROOM APPEARS ANIMATION HERE
     }
 
     void OnDisable()
@@ -30,13 +32,19 @@ public class MushroomController : MonoBehaviour
         // Check if the mushroom should die
         if (timer >= StayForNumBeats)
         {
+            // MUSHROOM LEAVES ANIMATION HERE
             Die();
         }
     }
     
-    private void OnMouseDown()
+    private void OnMouseDown() // Called when the mushroom is clicked
     {
-        // UPDATE SCORE HERE
+        ScoreHelper.Instance.AddScore(Score);
+
+        // IF BAD MUSHROOM, ADD MISTAKE
+
+        // DEATH ANIMATION HERE
+        
         Die();
     }
 
