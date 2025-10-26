@@ -61,7 +61,7 @@ public class MushroomController : MonoBehaviour
         {
             if (skin > 9)
             {
-                Score *= -1;
+                Score = 0;
                 Bad = true;
             }
             ScoreHelper.Instance.AddScore(Score);
