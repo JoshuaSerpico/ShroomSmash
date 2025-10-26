@@ -23,7 +23,6 @@ public class PauseButton : MonoBehaviour
         if (!GameManager.Paused)
         {
             pauseMenu.SetActive(true);
-            //implement pausing, not sure how to with the bpm settings
         }
         else
         {

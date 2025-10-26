@@ -7,6 +7,7 @@ public class ScoreHelper : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private TMP_Text scoreText2;
 
     private int currentScore;
 
@@ -42,6 +43,8 @@ public class ScoreHelper : MonoBehaviour
     {
         if (scoreText != null)
             scoreText.text = $"{currentScore}";
+        if (scoreText2 != null)
+            scoreText2.text = $"{currentScore}";
     }
 
     public void ResetScore()

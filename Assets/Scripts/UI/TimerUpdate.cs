@@ -38,7 +38,9 @@ public class TimerUpdate : MonoBehaviour
 
     void Update()
     {
-        if (Paused) return;
+        if (GameManager.Paused) return;
+        if (GameManager.GameOver) return;
+        if (GameManager.howToPlay) return;
 
         if (remainingTime <= 0f) return; // already finished
 
@@ -55,7 +57,7 @@ public class TimerUpdate : MonoBehaviour
             // Once timer reaches zero... DO SOMETHING
             if (totalSeconds == 0)
             {
-                Debug.LogWarning("Timer reached zero: Implement end-of-game logic here.");
+                GameManager.GameOver = true;
             }
         }
     }

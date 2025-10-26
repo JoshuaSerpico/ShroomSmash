@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class PlayerStats : MonoBehaviour
             HighScore = CurrentScore;
             SaveHighScore();
         }
+        Debug.Log("ScoreHelper updated");
     }
 
     #region Persistent Storage

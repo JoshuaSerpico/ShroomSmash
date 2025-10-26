@@ -51,39 +51,45 @@ public class HoleController : MonoBehaviour
 
     private void SpawnMushroom()
     {
-        if (mushroomPrefabs.Length == 0)
-        {
-            Debug.LogWarning("No mushroom prefabs assigned to " + gameObject.name);
-            return;
-        }
+        if(GameManager.Paused) return;
+        if(GameManager.howToPlay) return;
+        if(GameManager.GameOver) return;
 
-        // Pick a random mushroom prefab
-        GameObject prefab = mushroomPrefabs[Random.Range(0, mushroomPrefabs.Length)];
+            if (mushroomPrefabs.Length == 0)
+            {
+                Debug.LogWarning("No mushroom prefabs assigned to " + gameObject.name);
+                return;
+            }
 
-        // Instantiate it as a child of this hole
-        GameObject mushroomGO = Instantiate(prefab, transform.position, Quaternion.identity, transform);
+            // Pick a random mushroom prefab
+            GameObject prefab = mushroomPrefabs[Random.Range(0, mushroomPrefabs.Length)];
 
-        // Set mushroom animations and skins
-        mushroomGO.transform.localScale = new Vector3(100f, 100f, 1);
-        mushroomGO.transform.localPosition += new Vector3(-135f, -30, 0);
-        mushroomGO.GetComponent<MeshRenderer>().sortingOrder = 21;
+            // Instantiate it as a child of this hole
+            GameObject mushroomGO = Instantiate(prefab, transform.position, Quaternion.identity, transform);
 
-        var skeletonAnimation = mushroomGO.GetComponent<Spine.Unity.SkeletonAnimation>();
-        var skin = UnityEngine.Random.Range(1, 17);
-        skeletonAnimation.initialSkinName = skin.ToString();
-        skeletonAnimation.Initialize(true);
-        skeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
+            // Set mushroom animations and skins
+            mushroomGO.transform.localScale = new Vector3(100f, 100f, 1);
+            mushroomGO.transform.localPosition += new Vector3(-135f, -30, 0);
+            mushroomGO.GetComponent<MeshRenderer>().sortingOrder = 21;
 
-        // Mark that a mushroom exists
-        mushroomExists = true;
+            var skeletonAnimation = mushroomGO.GetComponent<Spine.Unity.SkeletonAnimation>();
+            var skin = UnityEngine.Random.Range(1, 17);
+            skeletonAnimation.initialSkinName = skin.ToString();
+            skeletonAnimation.Initialize(true);
+            skeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
 
-        // Get its controller and subscribe to the event
-        MushroomController mushroom = mushroomGO.GetComponent<MushroomController>();
-        if (mushroom != null)
-        {
-            mushroom.OnDeath += HandleMushroomDeath;
-            mushroom.skin = skin;
-        }
+            // Mark that a mushroom exists
+            mushroomExists = true;
+
+            // Get its controller and subscribe to the event
+            MushroomController mushroom = mushroomGO.GetComponent<MushroomController>();
+            if (mushroom != null)
+            {
+                mushroom.OnDeath += HandleMushroomDeath;
+                mushroom.skin = skin;
+            }
+        sfxManager.Instance.audioSource.clip = sfxManager.Instance.sfxClips[Random.Range(2, 5)];
+        sfxManager.Instance.audioSource.PlayOneShot(sfxManager.Instance.audioSource.clip);
     }
 
     private void HandleMushroomDeath(MushroomController mushroom)

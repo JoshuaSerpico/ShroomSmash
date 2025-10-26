@@ -45,6 +45,8 @@ public class MushroomController : MonoBehaviour
         // Check if the mushroom should die
         if (timer >= StayForNumBeats)
         {
+            sfxManager.Instance.audioSource.clip = sfxManager.Instance.sfxClips[UnityEngine.Random.Range(5, 7)];
+            sfxManager.Instance.audioSource.PlayOneShot(sfxManager.Instance.audioSource.clip);
             // MUSHROOM LEAVES ANIMATION HERE
             Die();
         }
@@ -77,7 +79,8 @@ public class MushroomController : MonoBehaviour
                 skeletonAnimation.AnimationState.SetAnimation(0, "death-good", false);
             }
             // DEATH ANIMATION HERE
-
+            sfxManager.Instance.audioSource.clip = sfxManager.Instance.sfxClips[UnityEngine.Random.Range(0, 2)];
+            sfxManager.Instance.audioSource.PlayOneShot(sfxManager.Instance.audioSource.clip);
             Die();
         }
     }
@@ -92,7 +95,6 @@ public class MushroomController : MonoBehaviour
     private void animationComplete(Spine.TrackEntry trackEntry) 
     {
         trackEntry.Complete -= animationComplete;
-
         Destroy(gameObject);
     }
 }

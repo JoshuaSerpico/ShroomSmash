@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class MusicManager : MonoBehaviour
+public class sfxManager : MonoBehaviour
 {
-    public static MusicManager Instance { get; private set; }
+    public static sfxManager Instance { get; private set; }
 
     public static bool mute;
 
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] public AudioSource audioSource;
+
+    [SerializeField] public AudioClip[] sfxClips;
 
     private void Awake()
     {
@@ -19,10 +21,6 @@ public class MusicManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        // Start music
-        if (!audioSource.isPlaying)
-            audioSource.Play();
     }
 
     private void Update()
@@ -31,7 +29,7 @@ public class MusicManager : MonoBehaviour
         {
             audioSource.mute = true;
         }
-        else 
+        else
         {
             audioSource.mute = false;
         }

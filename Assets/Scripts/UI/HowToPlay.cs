@@ -18,16 +18,13 @@ public class HowToPlay : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) 
+        if (GameManager.howToPlay) 
         {
-            finishReading();
+            howToPlayMenu.SetActive(true);
         }
-    }
-
-    void finishReading() 
-    {
-        howToPlayMenu.SetActive(false);
-        GameManager.firstTime = false;
-        GameManager.howToPlay = false;
+        else
+        {
+            howToPlayMenu.SetActive(false);
+        }
     }
 }

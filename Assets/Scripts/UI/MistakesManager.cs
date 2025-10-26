@@ -29,6 +29,8 @@ public class MistakesManager : MonoBehaviour
         if (isMistake)
         {
             mistakeCount++;
+            sfxManager.Instance.audioSource.clip = sfxManager.Instance.sfxClips[UnityEngine.Random.Range(13, 15)];
+            sfxManager.Instance.audioSource.PlayOneShot(sfxManager.Instance.audioSource.clip);
             updateMistakeUI();
         }
     }
@@ -55,7 +57,7 @@ public class MistakesManager : MonoBehaviour
             case 3:
                 // Update UI for third mistake
                 mistake3UI.SetActive(true);
-                Debug.LogWarning("End Game Condition Reached: Implement end-of-game logic here.");
+                GameManager.GameOver = true;
                 break;
             default:
                 // Handle more than three mistakes if necessary
